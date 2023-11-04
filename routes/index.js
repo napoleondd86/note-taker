@@ -36,11 +36,24 @@ router.post('/notes', (req, res) =>{
   res.end();  
 })
 
-// router.delete("/notes/:item", (req, res) => {
-//   req.params(item)
-// })
+router.delete("/notes/:id", (req, res) => {
+  const noteId = req.params.id;
+  let notesFile;
+  try{
+    const data = fs.readFileSync("./db/db.json", "utf-8");
+    notesFile = JSON.parse(data);
+    // filters for a matching note_id and makes new array without
+    const result = notesFile.filter((note) => note.id !== noteId);
+    // Save that array to the filesystem
+    fs.writeFileSync("./db/db.json", JSON.stringify(result));
+    res.status(200).json({message: `Item ${noteId} has been deleted 🗑️`})
+    console.log("Item has been deleted successfully.")
+  } catch (err){
+    console.error("error reading or parsing the file:", err);
+    res.status(500).json({error: "Internal server error."})
+  }
+
+})
 
 
-//display the saved notes when clicked
-//route for delete, look into filter method
 module.exports = router;
