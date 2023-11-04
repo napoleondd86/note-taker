@@ -26,9 +26,9 @@
 
 ## Screenshots
 
-[Preview Screenshot](../Develop/public/images/existing-note-screenshot.png)
+![Preview Screenshot](../Develop/public/images/existing-note-screenshot.png)
 
-[Preview Screenshot](../Develop/public/images/new-note-screenshot.png)
+![Preview Screenshot](../Develop/public/images/new-note-screenshot.png)
 
 
 
