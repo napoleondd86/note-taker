@@ -21,7 +21,7 @@
 
 ## Deployed Page
 
-- https://git.heroku.com/note-taker-napoleondd86.git
+- https://note-taker-napoleondd86-4a6c6f19f19e.herokuapp.com/
 
 
 ## Screenshots
